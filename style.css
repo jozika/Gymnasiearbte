@@ -1,0 +1,184 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  }
+  
+body{
+  
+  height:100vh;
+  
+  font-family:Arial, Helvetica, sans-serif;
+  
+  background:#0f172a;
+  color:white;
+  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  
+  overflow:hidden;
+  
+}
+  
+  
+.screen{
+  
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  
+  gap:35px;
+  padding:60px;
+  animation:spawn 0.7s ease; 
+}
+  
+  
+.gameTitle{
+  font-size:55px;
+  letter-spacing:2px;
+  color:#e2e8f0;
+  margin-bottom:0;
+  text-shadow:
+  0 0 10px rgba(56,189,248,0.5);
+  
+  }
+  
+  
+.btn{
+  
+  border-radius:12px;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.05);
+  
+  color:#e2e8f0;
+  transition:0.25s;
+  
+}
+  
+  
+.large{
+  padding:20px 80px;
+  font-size:22px; 
+}
+  
+  .large:hover{
+  
+  transform:scale(1.08);
+  
+  border-color:#38bdf8;
+  
+  box-shadow:
+  0 0 15px rgba(56,189,248,0.7);
+  
+}
+  
+  
+.small-buttons{
+  display:flex;
+  gap:15px;
+  
+}
+  
+  
+.small{
+  padding:12px 25px; 
+  font-size:15px;
+  margin-bottom: 80px;
+  
+}
+  
+.small:hover{
+  transform:scale(1.06);
+  border-color:#22d3ee;
+  box-shadow:
+  0 0 10px rgba(34,211,238,0.6); 
+}
+  
+  
+  @keyframes spawn{
+  
+  from{
+  opacity:0;
+  transform:scale(0.85);
+  }
+  
+  to{
+  opacity:1;
+  transform:scale(1);
+  }
+  
+}
+
+
+.modal {
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background: rgba(255,255,255,0.05);
+  border:2px solid #22d3ee;
+  padding: 20px;
+  border-radius: 15px;
+  display:none;
+  flex-direction: column;
+  align-items:center;
+  gap: 15px;
+  z-index: 999;
+}
+
+#avatarBlock {
+  display:none;
+  margin-top:10px;
+  max-height:300px;
+  overflow-y:auto;
+  border:1px solid #ccc;
+  padding:10px;
+  background:#111;
+  border-radius:10px;
+  width:350px;
+}
+
+#avatarList {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+#avatarList img{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:0.25s;
+}
+
+#avatarList img:hover{
+  transform:scale(1.1);
+  border-color:#22d3ee;
+}
+
+#playerInfo{
+  position: fixed;
+  top: 20px;
+  right:20px;
+  transform: translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+#selectedAvatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:2px solid #22d3ee;
+  display:none;
+}
+
+#selectedName{
+  font-size:18px;
+  color:white;
+}

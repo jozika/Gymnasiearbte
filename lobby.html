@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lobby</title>
+<link rel="stylesheet" href="lobby.css">
+</head>
+
+<body>
+    
+    <div id="playerInfoLobby">
+        <img id="lobbyAvatar" src="" alt="Avatar">
+        <span id="lobbyName"></span>
+      </div>
+
+    <div id="lobbyContainer">
+        <h1 class="title">Element Arena</h1>
+    
+        <div id="menu">
+            <button class="menuoption elementB">Element Battle</button>
+            <button class="menuoption quiz">Quiz</button>
+        </div>
+    
+        <div id="elementBattleLobby">
+            <button class="option create">🌐 Create Server</button>
+            <button class="option join">🚪 Join Server</button>
+            <p class="comingSoon">🚧 Serverfunktion är inte tillgänglig än</p>
+
+        </div>
+    </div>
+
+    <button class="backbtn">Back</button>
+</body>
+<script type="module">
+    import { initMenu } from "./menuScene.js";
+    import { getPlayerInfo } from "./playersystem.js";
+    
+    initMenu();
+    
+    // HÄMTA PLAYER DATA
+    const { name, avatar } = getPlayerInfo();
+    
+    // DOM
+    const lobbyName = document.getElementById("lobbyName");
+    const lobbyAvatar = document.getElementById("lobbyAvatar");
+    
+    // VISA DATA
+    if (name) {
+      lobbyName.textContent = name;
+    }
+    
+    if (avatar) {
+      lobbyAvatar.src = avatar;
+    }
+    </script>
+</html>

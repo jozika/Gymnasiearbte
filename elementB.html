@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Battle</title>
+    <link rel="stylesheet" href="elementB.css">
+</head>
+<body>
+<!-- den koden under gäller för timmer och gamebutton restart&endgame -->
+    <div id="timerBox">
+        ⏱ <span id="timer">0:00</span>
+    </div>
+
+    <!-- playerbaord ska innehålla avataren från inlognings eller startsidan info och score den har vid körning -->
+    <div id="playerboard">
+        <div class="playerBinfo avatar"></div>
+        <div id="score">
+            ⭐ XP: <span id="scoreValue">0</span>
+        </div>
+    </div>
+
+    <div id="xpPopup">+5XP</div>
+
+
+<!-- den koden under gäller för kort innehållning själva spelkörande -->
+    <div id="containerB">
+        <div class="cards card1 ">
+            <img src="img2/Hydrogen.png" alt="">
+            <div class="answers answer1">
+                <button class="answerbtn answerbtn1">Helium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Väte</button>
+                <button class="answerbtn answerbtn3">Hidorgyn</button>   
+            </div>
+        </div>
+        <div class="cards card2 ">
+            <img src="img2/Helium.png" alt="">
+            <div class="answers answer2">
+                <button class="answerbtn answerbtn1">Hailium</button>
+                <button class="answerbtn answerbtn2">Hafnium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Helium</button>   
+            </div>
+        </div>
+        <div class="cards card3 ">
+            <img src="img/Lithium.png" alt="" >
+            <div class="answers answer3">
+                <button class="answerbtn answerbtn1" data-correct="true">Litium</button>
+                <button class="answerbtn answerbtn2">Litheium</button>
+                <button class="answerbtn answerbtn3">Lituim</button>   
+            </div>
+        </div>
+        <div class="cards card4 ">
+            <img src="img2/Beryllium.png" alt="">
+            <div class="answers answer4">
+                <button class="answerbtn answerbtn1">Baryllium</button>
+                <button class="answerbtn answerbtn2"data-correct="true">Beryllium</button>
+                <button class="answerbtn answerbtn3">Berlluim</button>   
+            </div>
+        </div>
+        <div class="cards card5 ">
+            <img src="img2/Boron.png" alt="">
+            <div class="answers answer5">
+                <button class="answerbtn answerbtn1">Boor</button>
+                <button class="answerbtn answerbtn2">Boroan</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Bor</button>   
+            </div>
+        </div>
+        <div class="cards card6 ">
+            <div class="answers answer6">
+                <img src="img2/Carbon.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Kol</button>
+                <button class="answerbtn answerbtn2">Corbkol</button>
+                <button class="answerbtn answerbtn3">Kolium</button>   
+            </div>
+        </div>
+        <div class="cards card7 ">
+            <img src="img/Nitrogen.png" alt="">
+            <div class="answers answer7">
+                <button class="answerbtn answerbtn1">Kvave</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Kväve</button>
+                <button class="answerbtn answerbtn3">Nitrogien</button>   
+            </div>
+        </div>
+        <div class="cards card8 ">
+            <img src="img/Oxygen.png" alt="">
+            <div class="answers answer8">
+                <button class="answerbtn answerbtn1">Syer</button>
+                <button class="answerbtn answerbtn2">Oxegein</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Syre</button>   
+            </div>
+        </div>
+        <div class="cards card9 ">
+            <div class="answers answer9">
+                <img src="img2/Flourine.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Fluor</button>
+                <button class="answerbtn answerbtn2">Flour</button>
+                <button class="answerbtn answerbtn3">Florine</button>   
+            </div>
+        </div>
+        <div class="cards card10 ">
+            <div class="answers answer10">
+                <img src="img/Neon.png" alt="">
+                <button class="answerbtn answerbtn1">Neutron</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Neon</button>
+                <button class="answerbtn answerbtn3">Nitrogen</button>   
+            </div>
+        </div>
+
+        <div class="cards card11 ">
+            <div class="answers answer11">
+                <img src="img/Sodium.png" alt="">
+                <button class="answerbtn answerbtn1">Sodieum</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Natrium</button>
+                <button class="answerbtn answerbtn3">Natruim</button>   
+            </div>
+        </div>
+        <div class="cards card12 ">
+            <div class="answers answer12">
+                <img src="img/Magnesium.png" alt="">
+                <button class="answerbtn answerbtn1">Magnasuim</button>
+                <button class="answerbtn answerbtn2">Rutherford</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Magnesium</button>   
+            </div>
+        </div>
+        <div class="cards card13 ">
+            <div class="answers answer13">
+                <img src="img2/Aluminium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Aluminium</button>
+                <button class="answerbtn answerbtn2">Al</button>
+                <button class="answerbtn answerbtn3">Alumeinium</button>   
+            </div>
+        </div>
+        <div class="cards card14 ">
+            <div class="answers answer14">
+                <img src="img/Silicon.png" alt="">
+                <button class="answerbtn answerbtn1">Svavel</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Kisel</button>
+                <button class="answerbtn answerbtn3">Silcon</button>   
+            </div>
+        </div>
+        <div class="cards card15 ">
+            <div class="answers answer15">
+                <img src="img/Phosphorus.png" alt="">
+                <button class="answerbtn answerbtn1">Polonium</button>
+                <button class="answerbtn answerbtn2">Phosfor</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Fosfor</button>   
+            </div>
+        </div>
+        <div class="cards card16 ">
+            <div class="answers answer16">
+                <img src="img/Sulfur.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Svavel</button>
+                <button class="answerbtn answerbtn2">Syre</button>
+                <button class="answerbtn answerbtn3">Svaval</button>   
+            </div>
+        </div>
+        <div class="cards card17 ">
+            <div class="answers answer17">
+                <img src="img2/Clorine.png" alt="">
+                <button class="answerbtn answerbtn1">Clorin</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Klor</button>
+                <button class="answerbtn answerbtn3">Clorinium</button>   
+            </div>
+        </div>
+        <div class="cards card18 ">
+            <div class="answers answer18">
+                <img src="img2/Argon.png" alt="">
+                <button class="answerbtn answerbtn1">Antimon</button>
+                <button class="answerbtn answerbtn2">Armenium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Argon</button>   
+            </div>
+        </div>
+        <div class="cards card19 ">
+            <div class="answers answer19">
+                <img src="img/Potassium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Kalium</button>
+                <button class="answerbtn answerbtn2">Kalcium</button>
+                <button class="answerbtn answerbtn3">Potasium</button>   
+            </div>
+        </div>
+        <div class="cards card20 ">
+            <div class="answers answer20">
+                <img src="img2/Calcium.png" alt="">
+                <button class="answerbtn answerbtn1">Calium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Kalcium</button>
+                <button class="answerbtn answerbtn3">Cadium</button>   
+            </div>
+        </div>
+        <div class="cards card21 ">
+            <div class="answers answer21">
+                <img src="img/Scandium.png" alt="">
+                <button class="answerbtn answerbtn1">Scandinem</button>
+                <button class="answerbtn answerbtn2">Scanduim</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Skandium</button>   
+            </div>
+        </div>
+        <div class="cards card22 ">
+            <div class="answers answer22">
+                <img src="img/Titanium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Titan</button>
+                <button class="answerbtn answerbtn2">Titanuim</button>
+                <button class="answerbtn answerbtn3">Titainuim</button>   
+            </div>
+        </div>
+        <div class="cards card23 ">
+            <div class="answers answer23">
+                <img src="img/Vanadium.png" alt="">
+                <button class="answerbtn answerbtn1">Vanadinium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Vanadin</button>
+                <button class="answerbtn answerbtn3">Vanaduim</button>   
+            </div>
+        </div>
+        <div class="cards card24 ">
+            <div class="answers answer24">
+                <img src="img2/Cromium.png" alt="">
+                <button class="answerbtn answerbtn1">Kromium</button>
+                <button class="answerbtn answerbtn2">Cromium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Krom</button>   
+            </div>
+        </div>
+        <div class="cards card25 ">
+            <div class="answers answer25">
+                <img src="img/Manganese.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Mangan</button>
+                <button class="answerbtn answerbtn2">Mangenese</button>
+                <button class="answerbtn answerbtn3">Manganium</button>   
+            </div>
+        </div>
+        <div class="cards card26 ">
+            <div class="answers answer26">
+                <img src="img/Iron.png" alt="">
+                <button class="answerbtn answerbtn1">Väte</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Järn</button>
+                <button class="answerbtn answerbtn3">Fernium</button>   
+            </div>
+        </div>
+        <div class="cards card27 ">
+            <div class="answers answer27">
+                <img src="img2/Cobalt.png" alt="">
+                <button class="answerbtn answerbtn1">Kobelt</button>
+                <button class="answerbtn answerbtn2">Coblatnium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Kobolt</button>   
+            </div>
+        </div>
+        <div class="cards card28 ">
+            <div class="answers answer28">
+                <img src="img/Nickel.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Nickel</button>
+                <button class="answerbtn answerbtn2">Nikalasium</button>
+                <button class="answerbtn answerbtn3">Nickelium</button>   
+            </div>
+        </div>
+        <div class="cards card29 ">
+            <div class="answers answer29">
+                <img src="img2/Coppar.png" alt="">
+                <button class="answerbtn answerbtn1">Kopper</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Koppar</button>
+                <button class="answerbtn answerbtn3">Cumpnerium</button>   
+            </div>
+        </div>
+        <div class="cards card30 ">
+            <div class="answers answer30">
+                <img src="img/Zine.png" alt="">
+                <button class="answerbtn answerbtn1">Zince</button>
+                <button class="answerbtn answerbtn2">Zine</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Zink</button>   
+            </div>
+        </div>
+        <div class="cards card31 ">
+            <div class="answers answer31">
+                <img src="img2/Gallium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Gallium</button>
+                <button class="answerbtn answerbtn2">Galluim</button>
+                <button class="answerbtn answerbtn3">Galleuim</button>   
+            </div>
+        </div>
+        <div class="cards card32 ">
+            <div class="answers answer32">
+                <img src="img2/Germanium.png" alt="">
+                <button class="answerbtn answerbtn1">Garmanium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Germanium</button>
+                <button class="answerbtn answerbtn3">Silver</button>   
+            </div>
+        </div>
+        <div class="cards card33 ">
+            <div class="answers answer33">
+                <img src="img2/Arsenic.png" alt="">
+                <button class="answerbtn answerbtn1">Kol</button>
+                <button class="answerbtn answerbtn2">Arsenicum</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Arsenik</button>   
+            </div>
+        </div>
+        <div class="cards card34 ">
+            <div class="answers answer34">
+                <img src="img/Selenium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Selen</button>
+                <button class="answerbtn answerbtn2">Selan</button>
+                <button class="answerbtn answerbtn3">Syre</button>   
+            </div>
+        </div>
+        <div class="cards card35 ">
+            <div class="answers answer35">
+                <img src="img2/Bromine.png" alt="">
+                <button class="answerbtn answerbtn1">Bromineum</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Brom</button>
+                <button class="answerbtn answerbtn3">Bromina</button>   
+            </div>
+        </div>
+        <div class="cards card36">
+            <div class="answers answer36">
+                <img src="img/Krypton.png" alt="">
+                <button class="answerbtn answerbtn1">Kisel</button>
+                <button class="answerbtn answerbtn2">Klor</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Krypton</button>   
+            </div>
+        </div>
+        <div class="cards card37 ">
+            <div class="answers answer37">
+                <img src="img/Rubidium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Rubidium</button>
+                <button class="answerbtn answerbtn2">Ranbidium</button>
+                <button class="answerbtn answerbtn3">Natrium</button>   
+            </div>
+        </div>
+        <div class="cards card38 ">
+            <div class="answers answer38">
+                <img src="img2/Estrontium.png" alt="">
+                <button class="answerbtn answerbtn1">Estrontuim</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Strontium</button>
+                <button class="answerbtn answerbtn3">Silcon</button>   
+            </div>
+        </div>
+        <div class="cards card39 ">
+            <div class="answers answer39">
+                <img src="img/Yttrium.png" alt="">
+                <button class="answerbtn answerbtn1">Yelium</button>
+                <button class="answerbtn answerbtn2">Ytterium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Yttrium</button>   
+            </div>
+        </div>
+        <div class="cards card40 ">
+            <div class="answers answer40">
+                <img src="img/Zirconium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Zirkonium</button>
+                <button class="answerbtn answerbtn2">Zirconuim</button>
+                <button class="answerbtn answerbtn3">Zirnk</button>   
+            </div>
+        </div>
+        <div class="cards card41 ">
+            <div class="answers answer41">
+                <img src="img/Niobium.png" alt="">
+                <button class="answerbtn answerbtn1">Nepalium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Niob</button>
+                <button class="answerbtn answerbtn3">Niobnium</button>   
+            </div>
+        </div>
+        <div class="cards card42 ">
+            <div class="answers answer42">
+                <img src="img/Molybdenum.png" alt="">
+                <button class="answerbtn answerbtn1">Molybdanium</button>
+                <button class="answerbtn answerbtn2">Meowium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Molybden</button>   
+            </div>
+        </div>
+        <div class="cards card43 ">
+            <div class="answers answer43">
+                <img src="img/Technetium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Teknetium</button>
+                <button class="answerbtn answerbtn2">Technetuim</button>
+                <button class="answerbtn answerbtn3">Techneium</button>   
+            </div>
+        </div>
+        <div class="cards card44 ">
+            <div class="answers answer44">
+                <img src="img/Ruthenium.png" alt="">
+                <button class="answerbtn answerbtn1">Guld</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Rutenium</button>
+                <button class="answerbtn answerbtn3">Ruthanium</button>   
+            </div>
+        </div>
+        <div class="cards card45 ">
+            <div class="answers answer45">
+                <img src="img/Rhodium.png" alt="">
+                <button class="answerbtn answerbtn1">Rhomenium</button>
+                <button class="answerbtn answerbtn2">Rhodeium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Rodium</button>   
+            </div>
+        </div>
+        <div class="cards card46 ">
+            <div class="answers answer46">
+                <img src="img/Palladium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Palladium</button>
+                <button class="answerbtn answerbtn2">Palladeium</button>
+                <button class="answerbtn answerbtn3">Iron</button>   
+            </div>
+        </div>
+        <div class="cards card47 ">
+            <div class="answers answer47">
+                <img src="img/Silver.png" alt="">
+                <button class="answerbtn answerbtn1">Agenium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Silver</button>
+                <button class="answerbtn answerbtn3">Tenn</button>   
+            </div>
+        </div>
+        <div class="cards card48 ">
+            <div class="answers answer48">
+                <img src="img2/Cadmium.png" alt="">
+                <button class="answerbtn answerbtn1">Tellium</button>
+                <button class="answerbtn answerbtn2">Cadnium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Kadmium</button>   
+            </div>
+        </div>
+        <div class="cards card49 ">
+            <div class="answers answer49">
+                <img src="img2/Indium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Indium</button>
+                <button class="answerbtn answerbtn2">Indanium</button>
+                <button class="answerbtn answerbtn3">Tallium</button>   
+            </div>
+        </div>
+        <div class="cards card50 ">
+            <div class="answers answer50">
+                <img src="img/Tin.png" alt="">
+                <button class="answerbtn answerbtn1">Litium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Tenn</button>
+                <button class="answerbtn answerbtn3">Saniranium</button>   
+            </div>
+        </div>
+        <div class="cards card51 ">
+            <div class="answers answer51">
+                <img src="img2/Antimony.png" alt="">
+                <button class="answerbtn answerbtn1">Arsenic</button>
+                <button class="answerbtn answerbtn2">Antimoney</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Antimon</button>   
+            </div>
+        </div>
+        <div class="cards card52 ">
+            <div class="answers answer52">
+                <img src="img/Tellurium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Tellur</button>
+                <button class="answerbtn answerbtn2">Tellureium</button>
+                <button class="answerbtn answerbtn3">Polonium</button>   
+            </div>
+        </div>
+
+        <div class="cards card53 ">
+            <div class="answers answer53">
+                <img src="img2/Iodine.png" alt="">
+                <button class="answerbtn answerbtn1">Iodinium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Jod</button>
+                <button class="answerbtn answerbtn3">Bly</button>   
+            </div>
+        </div>
+        <div class="cards card54 ">
+            <div class="answers answer54">
+                <img src="img/Xenon.png" alt="">
+                <button class="answerbtn answerbtn1">Argon</button>
+                <button class="answerbtn answerbtn2">Krypton</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Xenon</button>   
+            </div>
+        </div>
+        <div class="cards card55 ">
+            <div class="answers answer55">
+                <img src="img2/Caesium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Cesium</button>
+                <button class="answerbtn answerbtn2">casium</button>
+                <button class="answerbtn answerbtn3">Samiranium</button>   
+            </div>
+        </div>
+        <div class="cards card56 ">
+            <div class="answers answer56">
+                <img src="img2/Barium.png" alt="">
+                <button class="answerbtn answerbtn1">Balgenium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Barium</button>
+                <button class="answerbtn answerbtn3">Radium</button>   
+            </div>
+        </div>
+        <div class="cards card57 ">
+            <div class="answers answer57">
+                <img src="img/Lanthanium.png" alt="">
+                <button class="answerbtn answerbtn1">Bor</button>
+                <button class="answerbtn answerbtn2">Lantanium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Lantan</button>   
+            </div>
+        </div>
+        <div class="cards card58 ">
+            <div class="answers answer58">
+                <img src="img2/Cerium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Cerium</button>
+                <button class="answerbtn answerbtn2">Celenium</button>
+                <button class="answerbtn answerbtn3">Uran</button>   
+            </div>
+        </div>
+
+        <div class="cards card59 ">
+            <div class="answers answer59">
+                <img src="img/praseodymium.png" alt="">
+                <button class="answerbtn answerbtn1">Magnesium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Praseodym</button>
+                <button class="answerbtn answerbtn3">Praseodium</button>   
+            </div>
+        </div>
+        <div class="cards card60 ">
+            <div class="answers answer60">
+                <img src="img/Neodymium.png" alt="">
+                <button class="answerbtn answerbtn1">Neondium</button>
+                <button class="answerbtn answerbtn2">Neodynium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Neodym</button>   
+            </div>
+        </div>
+        <div class="cards card61 ">
+            <div class="answers answer61">
+                <img src="img/Promethium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Prometium</button>
+                <button class="answerbtn answerbtn2">Promatium</button>
+                <button class="answerbtn answerbtn3">Prometuim</button>   
+            </div>
+        </div>
+        <div class="cards card62">
+            <div class="answers answer62">
+                <img src="img/Samarium.png" alt="">
+                <button class="answerbtn answerbtn1">Europium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Samarium</button>
+                <button class="answerbtn answerbtn3">Samiranium</button>   
+            </div>
+        </div>
+        <div class="cards card63 ">
+            <div class="answers answer63">
+                <img src="img2/Europium.png" alt="">
+                <button class="answerbtn answerbtn1">Silver</button>
+                <button class="answerbtn answerbtn2">Eurnaium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Europium</button>   
+            </div>
+        </div>
+        <div class="cards card64 ">
+            <div class="answers answer64">
+                <img src="img2/Gadolinium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Gadolinium</button>
+                <button class="answerbtn answerbtn2">Gegadium</button>
+                <button class="answerbtn answerbtn3">Guld</button>   
+            </div>
+        </div>
+        <div class="cards card65 ">
+            <div class="answers answer65">
+                <img src="img/Terbium.png" alt="">
+                <button class="answerbtn answerbtn1">Tesbelium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Terbium</button>
+                <button class="answerbtn answerbtn3">Terbanium</button>   
+            </div>
+        </div>
+        <div class="cards card66 ">
+            <div class="answers answer66">
+                <img src="img2/Dysprosium.png" alt="">
+                <button class="answerbtn answerbtn1">Tallium</button>
+                <button class="answerbtn answerbtn2">Dyaniume</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Dysprosium</button>   
+            </div>
+        </div>
+        <div class="cards card67 ">
+            <div class="answers answer67">
+                <img src="img2/Holmium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Holmium</button>
+                <button class="answerbtn answerbtn2">Holnium</button>
+                <button class="answerbtn answerbtn3">Holandnium</button>   
+            </div>
+        </div>
+        <div class="cards card68 ">
+            <div class="answers answer68">
+                <img src="img2/Erbium.png" alt="">
+                <button class="answerbtn answerbtn1">Zinkanium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Erbium</button>
+                <button class="answerbtn answerbtn3">Erberium</button>   
+            </div>
+        </div>
+        <div class="cards card69">
+            <div class="answers answer69">
+                <img src="img/Thulium.png" alt="">
+                <button class="answerbtn answerbtn1">Tmamium</button>
+                <button class="answerbtn answerbtn2">Thuluim</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Tulium</button>   
+            </div>
+        </div>
+        <div class="cards card70 ">
+            <div class="answers answer70">
+                <img src="img/Ytterbium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Ytterbium</button>
+                <button class="answerbtn answerbtn2">Yberium</button>
+                <button class="answerbtn answerbtn3">Astat</button>   
+            </div>
+        </div>
+        <div class="cards card71 ">
+            <div class="answers answer71">
+                <img src="img/Lutetium.png" alt="">
+                <button class="answerbtn answerbtn1">Calcium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Lutetium</button>
+                <button class="answerbtn answerbtn3">Luranium</button>   
+            </div>
+        </div>
+        <div class="cards card72 ">
+            <div class="answers answer72">
+                <img src="img2/Hafnium.png" alt="">
+                <button class="answerbtn answerbtn1">Titan</button>
+                <button class="answerbtn answerbtn2">Hofnium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Hafnium</button>   
+            </div>
+        </div>
+        <div class="cards card73 ">
+            <div class="answers answer73">
+                <img src="img/Tantalum.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Tantal</button>
+                <button class="answerbtn answerbtn2">Tantaliuem</button>
+                <button class="answerbtn answerbtn3">Titan</button>   
+            </div>
+        </div>
+
+        <div class="cards card74 ">
+            <div class="answers answer74">
+                <img src="img/Tungsten.png" alt="">
+                <button class="answerbtn answerbtn1">Tungstenium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Volfram</button>
+                <button class="answerbtn answerbtn3">Wolfram</button>   
+            </div>
+        </div>
+        <div class="cards card75 ">
+            <div class="answers answer75">
+                <img src="img/Rhenium.png" alt="">
+                <button class="answerbtn answerbtn1">Ruhenium</button>
+                <button class="answerbtn answerbtn2">Rehnium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Rhenium</button>   
+            </div>
+        </div>
+        <div class="cards card76 ">
+            <div class="answers answer76">
+                <img src="img/Osmium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Osmium</button>
+                <button class="answerbtn answerbtn2">Osmanium</button>
+                <button class="answerbtn answerbtn3">Ost</button>   
+            </div>
+        </div>
+        <div class="cards card77">
+            <div class="answers answer77">
+                <img src="img2/Iridium.png" alt="">
+                <button class="answerbtn answerbtn1">Järn</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Iridium</button>
+                <button class="answerbtn answerbtn3">Irlandium</button>   
+            </div>
+        </div>
+        <div class="cards card78">
+            <div class="answers answer78">
+                <img src="img/Platinum.png" alt="">
+                <button class="answerbtn answerbtn1">Petitty</button>
+                <button class="answerbtn answerbtn2">Pletenium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Platina</button>   
+            </div>
+        </div>
+        <div class="cards card79 ">
+            <div class="answers answer79">
+                <img src="img2/Gold.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Guld</button>
+                <button class="answerbtn answerbtn2">Augesnium</button>
+                <button class="answerbtn answerbtn3">Silver</button>   
+            </div>
+        </div>
+        <div class="cards card80">
+            <div class="answers answer80">
+                <img src="img/Mercury.png" alt="">
+                <button class="answerbtn answerbtn1">Hognium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Kvicksilver</button>
+                <button class="answerbtn answerbtn3">mercurium</button>   
+            </div>
+        </div>
+        <div class="cards card81 ">
+            <div class="answers answer81">
+                <img src="img/Thallium.png" alt="">
+                <button class="answerbtn answerbtn1">Titantal</button>
+                <button class="answerbtn answerbtn2">Thellium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Tallium</button>   
+            </div>
+        </div>
+        <div class="cards card82">
+            <div class="answers answer82">
+                <img src="img/Lead.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Bly</button>
+                <button class="answerbtn answerbtn2">Leadesnium</button>
+                <button class="answerbtn answerbtn3">Pablornium</button>   
+            </div>
+        </div>
+        <div class="cards card83 ">
+            <div class="answers answer83">
+                <img src="img2/Bismuth.png" alt="">
+                <button class="answerbtn answerbtn1">Antimut</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Vismut</button>
+                <button class="answerbtn answerbtn3">Bismut</button>   
+            </div>
+        </div>
+        <div class="cards card84 ">
+            <div class="answers answer84">
+                <img src="img/Polonium.png" alt="">
+                <button class="answerbtn answerbtn1">Clor</button>
+                <button class="answerbtn answerbtn2">Pohonium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Polonium</button>   
+            </div>
+        </div>
+        <div class="cards card85 ">
+            <div class="answers answer85">
+                <img src="img2/Astatine.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Astat</button>
+                <button class="answerbtn answerbtn2">Asratinium</button>
+                <button class="answerbtn answerbtn3">Krypton</button>   
+            </div>
+        </div>
+        <div class="cards card86 ">
+            <div class="answers answer86">
+                <img src="img/Radon.png" alt="">
+                <button class="answerbtn answerbtn1">Randonium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Radon</button>
+                <button class="answerbtn answerbtn3">Jod</button>   
+            </div>
+        </div>
+        <div class="cards card87">
+            <div class="answers answer87">
+                <img src="img2/Francium.png" alt="">
+                <button class="answerbtn answerbtn1">Isotop</button>
+                <button class="answerbtn answerbtn2">Forealium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Francium</button>   
+            </div>
+        </div>
+        <div class="cards card88 ">
+            <div class="answers answe88">
+                <img src="img/radium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Radium</button>
+                <button class="answerbtn answerbtn2">Randon</button>
+                <button class="answerbtn answerbtn3">Koppar</button>   
+            </div>
+        </div>
+        <div class="cards card89 ">
+            <div class="answers answer89">
+                <img src="img2/Actinium.png" alt="">
+                <button class="answerbtn answerbtn1">Helium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Aktinium</button>
+                <button class="answerbtn answerbtn3">Actenium</button>   
+            </div>
+        </div>
+        <div class="cards card90 ">
+            <div class="answers answer90">
+                <img src="img/Thorium.png" alt="">
+                <button class="answerbtn answerbtn1">Tehnium</button>
+                <button class="answerbtn answerbtn2">Thoruim</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Torium</button>   
+            </div>
+        </div>
+        <div class="cards card91 ">
+            <div class="answers answer91">
+                <img src="img/Protactinium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Protaktinium</button>
+                <button class="answerbtn answerbtn2">Palium</button>
+                <button class="answerbtn answerbtn3">Aluminium</button>   
+            </div>
+        </div>
+        <div class="cards card92">
+            <div class="answers answer92">
+                <img src="img/Uranium.png" alt="">
+                <button class="answerbtn answerbtn1">Ulomium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Uran</button>
+                <button class="answerbtn answerbtn3">Järn</button>   
+            </div>
+        </div>
+        <div class="cards card93">
+            <div class="answers answer93">
+                <img src="img/Neptunium.png" alt="">
+                <button class="answerbtn answerbtn1">Argon</button>
+                <button class="answerbtn answerbtn2">Nepal</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Neptunium</button>   
+            </div>
+        </div>
+        <div class="cards card94">
+            <div class="answers answer94">
+                <img src="img/Plutonium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Plutonium</button>
+                <button class="answerbtn answerbtn2">Silver</button>
+                <button class="answerbtn answerbtn3">Bly</button>   
+            </div>
+        </div>
+        <div class="cards card95">
+            <div class="answers answer95">
+                <img src="img2/Americium.png" alt="">
+                <button class="answerbtn answerbtn1">Tantal</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Americium</button>
+                <button class="answerbtn answerbtn3">Amberalium</button>   
+            </div>
+        </div>
+        <div class="cards card96">
+            <div class="answers answer96">
+                <img src="img2/Curium.png" alt="">
+                <button class="answerbtn answerbtn1">Holmium</button>
+                <button class="answerbtn answerbtn2">Camnium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Curium</button>   
+            </div>
+        </div>
+        <div class="cards card97">
+            <div class="answers answer97">
+                <img src="img2/Berkelium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Berkelium</button>
+                <button class="answerbtn answerbtn2">Bakihanma</button>
+                <button class="answerbtn answerbtn3">Oxygen</button>   
+            </div>
+        </div>
+        <div class="cards card98">
+            <div class="answers answer98">
+                <img src="img2/Californium.png" alt="">
+                <button class="answerbtn answerbtn1">Järn</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Californium</button>
+                <button class="answerbtn answerbtn3">Neutron</button>   
+            </div>
+        </div>
+        <div class="cards card99">
+            <div class="answers answer99">
+                <img src="img2/Einsteinium.png" alt="">
+                <button class="answerbtn answerbtn1">Boron</button>
+                <button class="answerbtn answerbtn2">Esteminium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Einsteinium</button>   
+            </div>
+        </div>
+        <div class="cards card100">
+            <div class="answers answer100">
+                <img src="img2/Fermium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Fermium</button>
+                <button class="answerbtn answerbtn2">Clor</button>
+                <button class="answerbtn answerbtn3">Kväve</button>   
+            </div>
+        </div>
+        <div class="cards card101">
+            <div class="answers answer101">
+                <img src="img/Mendelevium.png" alt="">
+                <button class="answerbtn answerbtn1">Madagaskarium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Mendelevium</button>
+                <button class="answerbtn answerbtn3">Kobolt</button>   
+            </div>
+        </div>
+        <div class="cards card102 ">
+            <div class="answers answer102">
+                <img src="img/Nobelium.png" alt="">
+                <button class="answerbtn answerbtn1">Iron</button>
+                <button class="answerbtn answerbtn2">Notosnack</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Nobelium</button>   
+            </div>
+        </div>
+        <div class="cards card103 ">
+            <div class="answers answer103">
+                <img src="img/Lawrencium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Lawrencium</button>
+                <button class="answerbtn answerbtn2">Lesrinium</button>
+                <button class="answerbtn answerbtn3">Fosfor</button>   
+            </div>
+        </div>
+        <div class="cards card104">
+            <div class="answers answer104">
+                <img src="img/Rutherfordium.png" alt="">
+                <button class="answerbtn answerbtn1">Hafnium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Rutherfordium</button>
+                <button class="answerbtn answerbtn3">Ruthanium</button>   
+            </div>
+        </div>
+        <div class="cards card105">
+            <div class="answers answer105">
+                <img src="img2/Dubnium.png" alt="">
+                <button class="answerbtn answerbtn1">Radon</button>
+                <button class="answerbtn answerbtn2">Järn</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Dubnium</button>   
+            </div>
+        </div>
+        <div class="cards card106">
+            <div class="answers answer106">
+                <img src="img/Seaborgium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Seaborgium</button>
+                <button class="answerbtn answerbtn2">Seawagonium</button>
+                <button class="answerbtn answerbtn3">Guld</button>   
+            </div>
+        </div>
+        <div class="cards card107">
+            <div class="answers answer107">
+                <img src="img2/Bohrium.png" alt="">
+                <button class="answerbtn answerbtn1">Rhodeium</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Bohrium</button>
+                <button class="answerbtn answerbtn3">Kadmium</button>   
+            </div>
+        </div>
+        <div class="cards card108">
+            <div class="answers answer108">
+                <img src="img2/Hassium.png" alt="">
+                <button class="answerbtn answerbtn1">Xenon</button>
+                <button class="answerbtn answerbtn2">Hashesium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Hassium</button>   
+            </div>
+        </div>
+        <div class="cards card109">
+            <div class="answers answer109">
+                <img src="img/Meitnerium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Meitnerium</button>
+                <button class="answerbtn answerbtn2">Palladium</button>
+                <button class="answerbtn answerbtn3">Tenn</button>   
+            </div>
+        </div>
+        <div class="cards card110">
+            <div class="answers answer110">
+                <img src="img2/Darmstadtium.png" alt="">
+                <button class="answerbtn answerbtn1">Arsenik</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Darmstadtium</button>
+                <button class="answerbtn answerbtn3">Indium</button>   
+            </div>
+        </div>
+        <div class="cards card111">
+            <div class="answers answer111">
+                <img src="img/Roentgenium.png" alt="">
+                <button class="answerbtn answerbtn1">Nickel</button>
+                <button class="answerbtn answerbtn2">Rodium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Röntgenium</button>   
+            </div>
+        </div>
+        <div class="cards card112">
+            <div class="answers answer112">
+                <img src="img2/Copernicium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Copernicium</button>
+                <button class="answerbtn answerbtn2">Antimon</button>
+                <button class="answerbtn answerbtn3">Järnbrotnium</button>   
+            </div>
+        </div>
+        <div class="cards card113">
+            <div class="answers answer113">
+                <img src="img/Nihonium.png" alt="">
+                <button class="answerbtn answerbtn1">Xenon</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Nihonium</button>
+                <button class="answerbtn answerbtn3">Selen</button>   
+            </div>
+        </div>
+        <div class="cards card114">
+            <div class="answers answer114">
+                <img src="img2/Flerovium.png" alt="">
+                <button class="answerbtn answerbtn1">Krypton</button>
+                <button class="answerbtn answerbtn2">Flynium</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Flerovium</button>   
+            </div>
+        </div>
+        <div class="cards card115">
+            <div class="answers answer115">
+                <img src="img/Mosocovium.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Moskovium</button>
+                <button class="answerbtn answerbtn2">Magicnium</button>
+                <button class="answerbtn answerbtn3">Salt</button>   
+            </div>
+        </div>
+        <div class="cards card116">
+            <div class="answers answer116">
+                <img src="img/Livermorium.png" alt="">
+                <button class="answerbtn answerbtn1">Lovetose</button>
+                <button class="answerbtn answerbtn2" data-correct="true">Livermorium</button>
+                <button class="answerbtn answerbtn3">Argon</button>   
+            </div>
+        </div>
+        <div class="cards card117">
+            <div class="answers answer117">
+                <img src="img/Tennessine.png" alt="">
+                <button class="answerbtn answerbtn1">Brom</button>
+                <button class="answerbtn answerbtn2">Arsenik</button>
+                <button class="answerbtn answerbtn3" data-correct="true">Tenness</button>   
+            </div>
+        </div>
+        <div class="cards card118">
+            <div class="answers answer118">
+                <img src="img/Oganesson.png" alt="">
+                <button class="answerbtn answerbtn1" data-correct="true">Oganesson</button>
+                <button class="answerbtn answerbtn2">Oganda</button>
+                <button class="answerbtn answerbtn3">Guld</button>   
+            </div>
+        </div>
+
+    </div>
+
+    <div id="gameButtons">
+        <button class="gameBtn restart">Restart</button>
+        <button class="gameBtn end">End Game</button>
+    </div>
+
+    <div id="gameOverScreen">
+        <h1> Cadaanka iska ilaali</h1>
+    
+        <p id="finalScore"></p>
+    
+        <button id="gaback">Back To Lobby</button>
+        <button id="restartGameoverscene">Restart Game</button>
+    
+    </div>
+</body>
+<script type="module" src="./battleScene.js">
+
+</script>
+</html>

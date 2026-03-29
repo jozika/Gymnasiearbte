@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+    
+body{
+    height:100vh;  
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+    
+    
+#lobbyContainer{ 
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+    gap:10px;
+    padding:30px;
+    animation:lobbySpawn 0.8s ease;  
+}
+   
+.title{
+    font-size:52px;
+    letter-spacing:2px; 
+    color:#e2e8f0;
+    margin-bottom: 45px;
+    text-shadow:
+    0 0 8px rgba(87, 139, 161, 0.6);    
+}
+    
+ 
+#menu{ 
+    display:flex;
+    gap:25px;
+    
+}
+    
+.menuoption{
+
+    padding:18px 45px;     
+    font-size:18px;  
+    border-radius:12px;        
+    cursor:pointer;        
+    border:1px solid rgba(255,255,255,0.1);        
+    background:rgba(255,255,255,0.05);       
+    color:#e2e8f0;       
+    backdrop-filter:blur(6px);       
+    transition:0.25s;      
+}
+    
+.menuoption:hover{
+   transform:scale(1.07);     
+   border:1px solid #38bdf8;
+   box-shadow:
+   0 0 12px rgba(56,189,248,0.6);                  
+}
+    
+    
+#elementBattleLobby{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    
+    padding:15px;
+    margin-top:10px;
+    /* border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    box-shadow:
+    0 0 15px rgba(0,200,255,0.3);    */
+}
+    
+    
+.option{
+     padding:16px 45px; 
+     font-size:16px;
+     border-radius:10px;
+     cursor:pointer;
+     border:1px solid rgba(255,255,255,0.1);    
+     background:rgba(255,255,255,0.04);  
+     color:#e2e8f0;
+     transition:0.25s;       
+}
+    
+.option:hover{
+    transform:scale(1.06);
+    border-color:#22d3ee;
+    box-shadow:
+    0 0 10px rgba(34,211,238,0.6);
+}
+
+      
+@keyframes lobbySpawn{
+    from{
+    opacity:0;
+    transform:scale(0.8);
+    }
+    
+    to{
+    opacity:1;
+    transform:scale(1);
+    }
+    
+}
+
+.backbtn{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border:2px solid rgba(255,255,255,0.15);
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+    cursor: pointer;
+    transition: 0.25;
+    backdrop-filter: blur(6px);
+}
+
+.backbtn:hover{
+    transform:scale(1.07);     
+    border:1px solid #38bdf8;
+    box-shadow:
+    0 0 12px rgba(56,189,248,0.6);                  
+ }
+
+ #playerInfoLobby {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+  
+  #lobbyAvatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #22d3ee;
+}
+  
+#lobbyName {
+    font-size: 18px;
+    color: white;
+}
+
+.comingSoon{
+    font-size:14px;
+    color:#94a3b8;
+    text-align:center;
+    margin-top:5px;
+    opacity:0.8;
+}
+
+
+

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div id="gameOverScreen">
+
+        <h1>🏆 Quiz Finished</h1>
+    
+        <p id="finalScore"></p>
+    
+        <button id="gaback">Back To Lobby</button>
+        <button id="restartGameoverscene">Restart Game</button>
+    
+    </div>
+    
+    <div id="xpPopup">+10XP</div>
+    
+    <div id="progressBox">
+        Question <span id="progressQ">1</span> / 40
+    </div>
+
+    
+    <!-- Koden under gäller fär quiz frågor -->
+    <div id="containerQ">
+        <div class="questions quiz1">
+            <h2>Vad är John Dalton största bidrag till vetenskapen?</h2>
+            <hr>
+            <div class="svarblock svar1">
+                <button class="svar svarbtnA" data-correct="true">A.Han påbörjade den moderna kemin. <br> och förkastade teorierna om de 4 elementen</button>
+                <button class="svar svarbtnB">B.Han uppfann den första fungerande <br> elektriska glödlampan. </button>
+                <button class="svar svarbtnC">C.Han upptäckte bakterier <br>och grundade mikrobiologin.</button>
+                <button class="svar svarbtnD">D.Han formulerade relativitetsteorin <br> om rum och tid.</button>
+            </div>
+        </div>
+       
+        <div class="questions quiz2">
+            <h2>Upptäckterna av protonen, elektronen och neutroner <br> gav 3 skilda nobelpris. I vilken ordning upptäcktes de?</h2>
+            <hr>
+            <div class="svarblock svar2">
+                <button class="svar svarbtnA" data-correct="true">A.Elektronen -Thomson – upptäckt 1897</button>
+                <button class="svar svarbtnB" data-correct="true">B.Protonen – Rutherford – upptäckt 1918</button>
+                <button class="svar svarbtnC" data-correct="true">C.Neutronen – Chatwick – upptäckt 1932</button>
+                <button class="svar svarbtnD">D.Elektronen - Neutronen -Protonen</button>
+            </div>
+        </div>
+       
+        <div class="questions quiz3">
+            <h2>Vilken av atomens partiklar är knuten till statisk elektricitet?</h2>
+            <hr>
+            <div class="svarblock svar3">
+                <button class="svar svarbtnA">A.Protonen</button>
+                <button class="svar svarbtnB">B.Neutronen</button>
+                <button class="svar svarbtnC" data-correct="true">C.Elektronen</button>
+                <button class="svar svarbtnD">D.Neon</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz4">
+            <h2>Vad är Rutherfords bidrag till den moderna kemin?</h2>
+            <hr>
+            <div class="svarblock svar4">
+                <button class="svar svarbtnA" data-correct="true">A.Han insåg att atomens massa finns i en atomkärna <br> och att elektroner åker i banor runt atomkärnan. <br> Han upptäckte att det mesta i atomen är tomrum.</button>
+                <button class="svar svarbtnB">B.Rutherfords största bidrag till den moderna kemin <br> var upptäckten av elektronen <br> och utvecklingen av teorin om atomens laddning.</button>
+            </div>
+        </div>
+       
+        <div class="questions quiz5">
+            <h2>Vad bidrog Nils Bohr med för att förbättra atommodellen?</h2>
+            <hr>
+            <div class="svarblock svar5">
+                <button class="svar svarbtnA">A.Han förbättrade Rutherfords<br>modell genom att påstå att atomkärnan består <br> av protoner och elektroner som sitter stilla.</button>
+                <button class="svar svarbtnB" data-correct="true">B.Han förbättrade Rutherfords modell<br>genom att tillägga att <br>elektroner rör sig runt atomkärnan <br> i olika energinivåer.</button>
+            </div>
+        </div>
+       
+        <div class="questions quiz6">
+            <h2>Vilka partiklar består en atom av och vilken laddning har de?</h2>
+            <hr>
+            <div class="svarblock svar6">
+                <button class="svar svarbtnA">A.Proton (neutral), Neutron (positiv), Elektron (negativ)</button>
+                <button class="svar svarbtnB" data-correct="true">B.Proton (positiv), Neutron(neutral), Elektron (negativ)</button>
+            </div>
+        </div>
+       
+        <div class="questions quiz7">
+            <h2>Vilken partikels antal bestämmer vilken grundämne det är?</h2>
+            <hr>
+            <div class="svarblock svar7">
+                <button class="svar svarbtnA">A.Elektronen</button>
+                <button class="svar svarbtnB" data-correct="true">B.Protonen</button>
+                <button class="svar svarbtnC">C.Neutronen</button>
+                <button class="svar svarbtnD">D.Kvantniumnen</button>
+            </div>
+        </div>
+       
+        <div class="questions quiz8">
+            <h2>Vilken laddning har ett grundämne i det periodiska systemet?</h2>
+            <hr>
+            <div class="svarblock svar8">
+                <button class="svar svarbtnA" data-correct="true">A.De är oladdade</button>
+                <button class="svar svarbtnB">B.Positive laddning</button>
+                <button class="svar svarbtnB">C. Negative laddning</button>
+                <button class="svar svarbtnB">D.De har både Positive & Negative laddning</button>
+            </div>
+        </div>
+    
+        <div class="questions quiz9">
+            <h2>Vad kallas atomens 3 första skal?</h2>
+            <hr>
+            <div class="svarblock svar9">
+                <button class="svar svarbtnA">A.N-skal, L-skal & M-skal</button>
+                <button class="svar svarbtnB">B.L-skal, K-skal & M-skal</button>
+                <button class="svar svarbtnC " data-correct="true">C.K-skal, L-skal & M-skal</button>
+                <button class="svar svarbtnD">D.K-skal, M-skal & L-skal </button>
+            </div>
+        </div>
+       
+        <div class="questions quiz10">
+            <h2>Vad är en valenselektron och vilken betydelse har den för atomen?</h2>
+            <hr>
+            <div class="svarblock svar10">
+                <button class="svar svarbtnA">A.Valenselektroner finns i atomkärnan. <br> De bestämmer atomens vikt.</button>
+                <button class="svar svarbtnB" data-correct="true">B.Valenselektroner finns i det yttersta elektronskalet.<br>De ger atom dess egenskaper.</button>
+            </div>
+        </div>
+
+        <div class="questions quiz11">
+            <h2>Vad är en isotop?</h2><hr>
+            <div class="svarblock svar11">
+                <button class="svar svarbtnA" data-correct="true">A.Samma grundämne men med <br> olika antal neutroner</button>
+                <button class="svar svarbtnB">D.En jon med positiv laddning</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz12">
+            <h2>Vad kallar viktenheten du använder när du väger atomer och molekyler?</h2><hr>
+            <div class="svarblock svar12">
+                <button class="svar svarbtnA">A. Kilogram</button>
+                <button class="svar svarbtnB" data-correct="true">B. Unit (u)</button>
+                <button class="svar svarbtnC">C. Gram</button>
+                <button class="svar svarbtnD">D. Liter</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz13">
+            <h2>Hur mycket väger en elektron jämfört med en proton eller neutron?</h2><hr>
+            <div class="svarblock svar13">
+                <button class="svar svarbtnB">A. Ca 2 gånger mer</button>
+                <button class="svar svarbtnC">B. Samma vikt</button>
+                <button class="svar svarbtnA" data-correct="true">C. Ca 2000 gånger mindre</button>
+                <button class="svar svarbtnD">D. Ca 10 gånger mer</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz14">
+            <h2>Hur många valenselektroner kan det finnas i det yttersta elektronskalet?</h2><hr>
+            <div class="svarblock svar14">
+                <button class="svar svarbtnB">A. Max 10</button>
+                <button class="svar svarbtnC">B. Max 18</button>
+                <button class="svar svarbtnD">C. Max 2</button>
+                <button class="svar svarbtnA" data-correct="true">D. Max 8</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz15">
+            <h2>Etan har formel C₂H₆. Vad är formelmassan?</h2><hr>
+            <div class="svarblock svar15">
+                <button class="svar svarbtnA" data-correct="true">A. 30 u</button>
+                <button class="svar svarbtnB">B. 28 u</button>
+                <button class="svar svarbtnC">C. 32 u</button>
+                <button class="svar svarbtnD">D. 26 u</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz16">
+            <h2>Nämn några grundämnen som finns i naturen i ren form?</h2><hr>
+            <div class="svarblock svar16">
+                <button class="svar svarbtnB">A. Kväve, syre</button>
+                <button class="svar svarbtnA" data-correct="true">B. Silver, guld, platina, argon</button>
+                <button class="svar svarbtnC">C. Järn och kalcium</button>
+                <button class="svar svarbtnD">D. Väte och helium</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz17">
+            <h2>När började vetenskapsmän upptäcka nya grundämnen i stor skala?</h2><hr>
+            <div class="svarblock svar17">
+                <button class="svar svarbtnB">A. 1500‑tal</button>
+                <button class="svar svarbtnC">B. 1900‑tal</button>
+                <button class="svar svarbtnA" data-correct="true">C. 1700‑ och 1800‑talen</button>
+                <button class="svar svarbtnD">D. 2000‑tal</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz18">
+            <h2>Vem skapade det periodiska systemet?</h2><hr>
+            <div class="svarblock svar18">
+                <button class="svar svarbtnB">A. Dalton</button>
+                <button class="svar svarbtnC">B. Bohr</button>
+                <button class="svar svarbtnD">C. Rutherford</button>
+                <button class="svar svarbtnA" data-correct="true">D. Mendelejev</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz19">
+            <h2>Vad är en grupp i det periodiska systemet?</h2><hr>
+            <div class="svarblock svar19">
+                <button class="svar svarbtnB">A. Vågrät rad</button>
+                <button class="svar svarbtnA" data-correct="true">B. Lodrät kolumn</button>
+                <button class="svar svarbtnC">C. Alla metaller</button>
+                <button class="svar svarbtnD">D. Alla ickemetaller</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz20">
+            <h2>Vad är en period i det periodiska systemet?</h2><hr>
+            <div class="svarblock svar20">
+                <button class="svar svarbtnB">A. Lodrät kolumn</button>
+                <button class="svar svarbtnC">B. Alla alkalimetaller</button>
+                <button class="svar svarbtnA" data-correct="true">C. Vågrät rad</button>
+                <button class="svar svarbtnD">D. Alla ädelgaser</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz21">
+            <h2>Vilka tre huvudtyper finns i det periodiska systemet?</h2><hr>
+            <div class="svarblock svar21">
+                <button class="svar svarbtnB">A. Gas, vätska, fast</button>
+                <button class="svar svarbtnC">B. Protoner, neutroner, elektroner</button>
+                <button class="svar svarbtnD">C. Salter, syror, baser</button>
+                <button class="svar svarbtnA" data-correct="true">D. Metaller, halvmetaller & icke‑metaller</button>
+
+            </div>
+        </div>
+        
+        <div class="questions quiz22">
+            <h2>Vilka elektroner deltar i kemiska reaktioner?</h2><hr>
+            <div class="svarblock svar22">
+                <button class="svar svarbtnA" data-correct="true">A. Valenselektroner</button>
+                <button class="svar svarbtnB">B.Innersta elektroner</button>
+                <button class="svar svarbtnC">C.Neutroner</button>
+                <button class="svar svarbtnD">D.Protoner</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz23">
+            <h2>I vilken grupp hittar vi alkalimetaller och vad har de för egenskaper?</h2><hr>
+            <div class="svarblock svar23">
+                <button class="svar svarbtnB">A.Grupp 2, ädelgasstruktur</button>
+                <button class="svar svarbtnA" data-correct="true">B. Grupp 1, reagerar starkt med vatten</button>
+                <button class="svar svarbtnC">C.Grupp 18, är tyngst</button>
+                <button class="svar svarbtnD">D.Grupp 17, är dåliga saltbildare</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz24">
+            <h2>I vilken grupp hittar vi halogener och vad har de för egenskaper?</h2><hr>
+            <div class="svarblock svar24">
+                <button class="svar svarbtnB">A.Grupp 1</button>
+                <button class="svar svarbtnC">B.Grupp 18</button>
+                <button class="svar svarbtnA" data-correct="true">C.Grupp 17, bra på att bilda salter</button>
+                <button class="svar svarbtnD">D.Grupp 2</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz25">
+            <h2>I vilken grupp hittar vi ädelgaser och vad är speciellt med dem?</h2><hr>
+            <div class="svarblock svar25">
+                <button class="svar svarbtnB">A.Grupp 1</button>
+                <button class="svar svarbtnC">B.Grupp 2</button>
+                <button class="svar svarbtnD">C.Grupp 17</button>
+                <button class="svar svarbtnA" data-correct="true">D.Grupp 18, fullt yttersta skal</button>
+
+            </div>
+        </div>
+        
+        <div class="questions quiz26">
+            <h2>Vilka tre typer av bindningar finns mellan atomer?</h2><hr>
+            <div class="svarblock svar26">
+                <button class="svar svarbtnA" data-correct="true">A. Metall‑, molekyl‑ & jonbindning</button>
+                <button class="svar svarbtnB">B. Atom‑, molekyl‑ & jonbindning</button>
+                <button class="svar svarbtnC">C. Elektron‑, proton‑ & neutronbindning</button>
+                <button class="svar svarbtnD">D. Salt‑, syra‑ & basbindning</button>
+            </div>
+        </div>
+        
+         <div class="questions quiz27"> <!--Ändra på frågan -->
+            <h2>Vad kallas kemiska föreningar med dessa bindningar?</h2><hr>
+            <div class="svarblock svar27">
+                <button class="svar svarbtnB">A.Jon, atom & molekyl</button>
+                <button class="svar svarbtnA" data-correct="true">B.Metall, molekyl & salt</button>
+                <button class="svar svarbtnC">C.Proton, neutron & elektron</button>
+                <button class="svar svarbtnD">D.Syra, bas & salt</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz28">
+            <h2>Vad är ädelgasstruktur?</h2><hr>
+            <div class="svarblock svar28">
+                <button class="svar svarbtnB">A.Inga elektroner</button>
+                <button class="svar svarbtnC">B.Extra protoner i kärnan</button>
+                <button class="svar svarbtnA" data-correct="true">C.Fullt yttersta elektronskal</button>
+                <button class="svar svarbtnD">D.Extra neutroner i kärnan</button>
+            </div>
+        </div>  
+        
+        <div class="questions quiz29">
+            <h2>Vad är en jon?</h2><hr>
+            <div class="svarblock svar29">
+                <button class="svar svarbtnA" data-correct="true">A.En atom eller molekyl <br>med elektrisk laddning</button>
+                <button class="svar svarbtnD">D.En atom med lika många <br>protoner & neutroner</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz30">
+            <h2>Vad kallas en positiv jon?</h2><hr>
+            <div class="svarblock svar30">
+                <button class="svar svarbtnB">A.Anjon</button>
+                <button class="svar svarbtnA" data-correct="true">B.Katjon</button>
+                <button class="svar svarbtnC">C.Neutron</button>
+                <button class="svar svarbtnD">D.Elektron</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz31">
+            <h2>Vad kallas en negativ jon?</h2><hr>
+            <div class="svarblock svar31">
+                <button class="svar svarbtnB">A. Katjon</button>
+                <button class="svar svarbtnC">B. Proton</button>
+                <button class="svar svarbtnA" data-correct="true">C. Anjon</button>
+                <button class="svar svarbtnD">D. Neutron</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz32">
+            <h2>Vilken typ av bindning finns mellan Natrium och klor i NaCl?</h2><hr>
+            <div class="svarblock svar32">
+                <button class="svar svarbtnB">A. Kovalent bindning</button>
+                <button class="svar svarbtnC">B. Metallbindning</button>
+                <button class="svar svarbtnD">C. Vätebindning</button>
+                <button class="svar svarbtnA" data-correct="true">B.Jonbindning</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz33">
+            <h2>Vad är kovalent bindning?</h2><hr>
+            <div class="svarblock svar33">
+                <button class="svar svarbtnA" data-correct="true">A. Atomer delar på elektroner</button>
+                <button class="svar svarbtnB">B. Atomer byter protoner</button>
+                <button class="svar svarbtnC">C. Atomer tar upp neutroner</button>
+                <button class="svar svarbtnD">D. Atomer blir gaser</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz34">
+            <h2>Vad är metallbindning?</h2><hr>
+            <div class="svarblock svar34">
+                <button class="svar svarbtnB">A.Atomer delar alla protoner</button>
+                <button class="svar svarbtnA" data-correct="true">B.Delokaliserade elektroner binder metalljoner</button>
+                <button class="svar svarbtnC">C.Elektroner binds till neutoner</button>
+                <button class="svar svarbtnD">D.Metaller reagerar med vatten</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz35">
+            <h2>Vilken gas är mest reaktiv bland ädelgaser?</h2><hr>
+            <div class="svarblock svar35">
+                <button class="svar svarbtnB">A.Helium (He)</button>
+                <button class="svar svarbtnC">B.Neon (Ne)</button>
+                <button class="svar svarbtnA" data-correct="true">C.Radon (Rn)</button>
+                <button class="svar svarbtnD">D.Argon (Ar)</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz36">
+            <h2>Vad är en molekyl?</h2><hr>
+            <div class="svarblock svar36">
+                <button class="svar svarbtnB">A.En atom med extra neutron</button>
+                <button class="svar svarbtnC">B.En jon</button>
+                <button class="svar svarbtnD">C.Ett grundämne</button>
+                <button class="svar svarbtnA" data-correct="true">D.Två eller fler atomer bundna kemiskt</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz37">
+            <h2>Vilka grundämnen är de lättaste?</h2><hr>
+            <div class="svarblock svar37">
+                <button class="svar svarbtnA" data-correct="true">A. Väte och helium</button>
+                <button class="svar svarbtnB">B. Kol och syre</button>
+                <button class="svar svarbtnC">C. Järn och koppar</button>
+                <button class="svar svarbtnD">D. Zink och silver</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz38">
+            <h2>Vilken metall är den mest reaktiva?</h2><hr>
+            <div class="svarblock svar38">
+                <button class="svar svarbtnB">A.Guld (Au)</button>
+                <button class="svar svarbtnA" data-correct="true">B.Francium (Fr)</button>
+                <button class="svar svarbtnC">C. Silver (Ag)</button>
+                <button class="svar svarbtnD">D. Koppar (Cu)</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz39">
+            <h2>Vilket grundämne används ofta som referens för atomvikt?</h2><hr>
+            <div class="svarblock svar39">
+                <button class="svar svarbtnB">A. Väte (H)</button>
+                <button class="svar svarbtnC">B. Syre (O)</button>
+                <button class="svar svarbtnA" data-correct="true">C. Kol‑12 (¹²C)</button>
+                <button class="svar svarbtnD">D. Järn (Fe)</button>
+            </div>
+        </div>
+        
+        <div class="questions quiz40">
+            <h2>Vad menas med relativ atommassa?</h2><hr>
+            <div class="svarblock svar40">
+                <button class="svar svarbtnA" data-correct="true">A.Den genomsnittliga massan <br> av ett grundämnes atomer  <br>i förhållande till atommassenheten</button>
+                <button class="svar svarbtnB">B.Den totala mängden protoner & neutroner <br>i alla atomer oberoende av deras massa.</button>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="nextbtn">NEXT</button>
+
+    <div id="gameButtons">
+        <button class="gameBtn restart">Restart</button>
+        <button class="gameBtn end">End Game</button>
+    </div>
+
+    <div id="timerBox">
+        ⏱ <span id="timer">0:00</span>
+    </div>
+    
+    <div id="score">
+        ⭐ XP: <span id="scoreValue">0</span>
+    </div>
+</body>
+<script type="module" src="./quizScene.js"></script>
+</html>
